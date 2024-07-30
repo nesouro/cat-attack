@@ -1,0 +1,75 @@
+[gd_scene load_steps=7 format=3 uid="uid://ce7qn3bc41knx"]
+
+[ext_resource type="Texture2D" uid="uid://ceve7ppu6seq2" path="res://assets/UI/HealthBarPanel_160x41.png" id="1_w4edy"]
+[ext_resource type="Script" path="res://UI/HUD.gd" id="1_wm4qt"]
+[ext_resource type="Texture2D" uid="uid://vng0o6gb547m" path="res://assets/UI/ValueBar_128x16.png" id="2_frk5t"]
+[ext_resource type="Texture2D" uid="uid://bl1blqxjemvx7" path="res://assets/UI/ValueRed_120x8.png" id="3_te4m8"]
+[ext_resource type="Texture2D" uid="uid://qyn4wsf1sgy2" path="res://assets/UI/HeartIcons_32x32.png" id="4_1rlq2"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wn51q"]
+texture = ExtResource("1_w4edy")
+texture_margin_left = 11.2047
+texture_margin_top = 10.0
+texture_margin_right = 10.809
+texture_margin_bottom = 10.0
+
+[node name="HUD" type="CanvasLayer" groups=["HUD"]]
+script = ExtResource("1_wm4qt")
+
+[node name="TimerLabel" type="Label" parent="."]
+unique_name_in_owner = true
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -93.0
+offset_top = 15.0
+offset_right = -22.0
+offset_bottom = 38.0
+grow_horizontal = 0
+text = "00:00"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BakedLabel" type="Label" parent="."]
+unique_name_in_owner = true
+offset_left = 33.0
+offset_top = 61.0
+offset_right = 104.0
+offset_bottom = 84.0
+text = "10 points"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = 30.0
+offset_top = 20.0
+offset_right = 187.0
+offset_bottom = 52.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_wn51q")
+
+[node name="hpBar" type="TextureProgressBar" parent="Panel"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 19.0
+offset_top = -8.0
+offset_right = 147.0
+offset_bottom = 8.0
+grow_vertical = 2
+value = 75.0
+texture_under = ExtResource("2_frk5t")
+texture_progress = ExtResource("3_te4m8")
+texture_progress_offset = Vector2(4, 4)
+
+[node name="TextureRect" type="TextureRect" parent="Panel"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -7.0
+offset_top = -20.0
+offset_right = 33.0
+offset_bottom = 20.0
+grow_vertical = 2
+texture = ExtResource("4_1rlq2")

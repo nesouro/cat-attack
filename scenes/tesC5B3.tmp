@@ -1,0 +1,62 @@
+[gd_scene load_steps=13 format=3 uid="uid://blsjuyndrssgb"]
+
+[ext_resource type="PackedScene" uid="uid://ch7bqpxuhhvks" path="res://player/player.tscn" id="1_2nv1r"]
+[ext_resource type="Texture2D" uid="uid://crtm54riws02i" path="res://assets/character/Cats@2x.png" id="1_4ra7c"]
+[ext_resource type="Texture2D" uid="uid://c7y7vvbbe7ffg" path="res://assets/enemies/Mushrooms/mushroom_green_front.png" id="3_m632x"]
+[ext_resource type="Texture2D" uid="uid://dv4f5txegw8f8" path="res://assets/enemies/Mushrooms/mushroom_green_hurt.png" id="4_qrvnt"]
+[ext_resource type="Texture2D" uid="uid://p4y055c66v8r" path="res://assets/enemies/Mushrooms/mushroom_red_front.png" id="5_28dcl"]
+[ext_resource type="Texture2D" uid="uid://b7mf86tnnftdu" path="res://assets/enemies/Seedaling/seedaling_front_green.png" id="6_1fdwd"]
+[ext_resource type="Texture2D" uid="uid://hj1f4j24452e" path="res://assets/enemies/Seedaling/seedaling_front_pink.png" id="7_64hef"]
+[ext_resource type="Texture2D" uid="uid://ci77oqbhjldvt" path="res://assets/enemies/Seedaling/seedaling_hurt.png" id="8_eikdj"]
+[ext_resource type="Texture2D" uid="uid://cm2asajg1oyty" path="res://assets/enemies/Seedaling/seedaling_side_green.png" id="9_isgwl"]
+[ext_resource type="Texture2D" uid="uid://b3n5xrq8hy33r" path="res://assets/enemies/Seedaling/seedaling_side_pink.png" id="10_yujff"]
+[ext_resource type="Texture2D" uid="uid://bj6wp0ct6fxso" path="res://assets/enemies/Slimes/slime_purple_side.png" id="11_85the"]
+[ext_resource type="PackedScene" uid="uid://da1naw1g80awr" path="res://enemies/seedling.tscn" id="12_0pytm"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_2nv1r")]
+position = Vector2(141, 81)
+
+[node name="Cats_2x" type="Sprite2D" parent="."]
+position = Vector2(428, 228)
+texture = ExtResource("1_4ra7c")
+
+[node name="MushroomGreenFront" type="Sprite2D" parent="."]
+position = Vector2(862, 485)
+texture = ExtResource("3_m632x")
+
+[node name="MushroomGreenHurt" type="Sprite2D" parent="."]
+position = Vector2(977, 479)
+texture = ExtResource("4_qrvnt")
+
+[node name="MushroomRedFront" type="Sprite2D" parent="."]
+position = Vector2(863, 513)
+texture = ExtResource("5_28dcl")
+
+[node name="SeedalingFrontGreen" type="Sprite2D" parent="."]
+position = Vector2(828, 387)
+texture = ExtResource("6_1fdwd")
+
+[node name="SeedalingFrontPink" type="Sprite2D" parent="."]
+position = Vector2(828, 414.5)
+texture = ExtResource("7_64hef")
+
+[node name="SeedalingHurt" type="Sprite2D" parent="."]
+position = Vector2(918, 422.5)
+texture = ExtResource("8_eikdj")
+
+[node name="SeedalingSideGreen" type="Sprite2D" parent="."]
+position = Vector2(828, 363)
+texture = ExtResource("9_isgwl")
+
+[node name="SeedalingSidePink" type="Sprite2D" parent="."]
+position = Vector2(828, 434.5)
+texture = ExtResource("10_yujff")
+
+[node name="SlimePurpleSide" type="Sprite2D" parent="."]
+position = Vector2(860, 329)
+texture = ExtResource("11_85the")
+
+[node name="Pawn" parent="." instance=ExtResource("12_0pytm")]
+position = Vector2(190, 78)

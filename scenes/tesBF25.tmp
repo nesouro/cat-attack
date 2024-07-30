@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://blsjuyndrssgb"]
+
+[ext_resource type="PackedScene" uid="uid://ch7bqpxuhhvks" path="res://player/player.tscn" id="1_2nv1r"]
+[ext_resource type="PackedScene" uid="uid://rqbphjpgxlff" path="res://enemies/mushroom.tscn" id="3_8nq2w"]
+[ext_resource type="PackedScene" uid="uid://do0v1jf5qx05x" path="res://enemies/slime.tscn" id="4_w2auq"]
+[ext_resource type="PackedScene" uid="uid://da1naw1g80awr" path="res://enemies/seedling.tscn" id="12_0pytm"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_2nv1r")]
+position = Vector2(141, 81)
+speed = 3.0
+attack_damage = 2
+hp = 100
+
+[node name="Pawn" parent="." instance=ExtResource("12_0pytm")]
+position = Vector2(291, 103)
+
+[node name="seedling" parent="." instance=ExtResource("3_8nq2w")]
+position = Vector2(561, 214)
+
+[node name="slime" parent="." instance=ExtResource("4_w2auq")]
+position = Vector2(477, 105)

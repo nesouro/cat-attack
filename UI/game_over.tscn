@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://ca2mg4fdd47tg"]
+
+[ext_resource type="Script" path="res://UI/game_over.gd" id="1_tvtif"]
+
+[node name="GameOver" type="CanvasLayer" groups=["GameOverUI"]]
+script = ExtResource("1_tvtif")
+
+[node name="GameOverLabel" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -51.0
+offset_top = -96.0
+offset_right = 36.0
+offset_bottom = -73.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Game Over"
+horizontal_alignment = 1
+vertical_alignment = 1

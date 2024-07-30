@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://blsjuyndrssgb"]
+
+[ext_resource type="PackedScene" uid="uid://ch7bqpxuhhvks" path="res://player/player.tscn" id="1_2nv1r"]
+[ext_resource type="PackedScene" uid="uid://ce7qn3bc41knx" path="res://UI/HUD.tscn" id="4_kqtyq"]
+[ext_resource type="PackedScene" uid="uid://cn0npfcom6u1r" path="res://items/bakedgood.tscn" id="5_46o3p"]
+[ext_resource type="PackedScene" uid="uid://byt3fkvlx7l5d" path="res://enemies/mob_spawner.tscn" id="6_fnsgw"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_2nv1r")]
+position = Vector2(576, 305)
+
+[node name="Bakedgood" parent="." instance=ExtResource("5_46o3p")]
+position = Vector2(199, 45)
+
+[node name="Bakedgood2" parent="." instance=ExtResource("5_46o3p")]
+position = Vector2(361, 148)
+
+[node name="MobSpawner" parent="." instance=ExtResource("6_fnsgw")]
+
+[node name="CanvasLayer" parent="." instance=ExtResource("4_kqtyq")]

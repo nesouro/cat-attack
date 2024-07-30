@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://cn0npfcom6u1r"]
+
+[ext_resource type="Texture2D" uid="uid://0yjjcju76x4w" path="res://assets/Bar Katto breakfast iconset .png" id="1_3yo3l"]
+[ext_resource type="Script" path="res://scripts/life_reg.gd" id="2_v3p5o"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_408g7"]
+radius = 9.0
+
+[node name="Bakedgood" type="Sprite2D"]
+position = Vector2(0, -2)
+texture = ExtResource("1_3yo3l")
+region_enabled = true
+region_rect = Rect2(-0.488312, 48.0795, 16.7269, 16.0074)
+script = ExtResource("2_v3p5o")
+regeneration_amount = 20
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(0, -1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_408g7")
