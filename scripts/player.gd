@@ -137,9 +137,8 @@ func damage(amount: int):
 	if hp <= 0: return
 	
 	hp -= amount
-	print("Player damaged: ", amount, ", hp: ", hp)
 	
-	#emit_signal("hp_changed", hp, max_hp)
+	hp_changed.emit(hp, max_hp)
 
 	# change sprite when damaged
 	modulate = Color.ORANGE_RED

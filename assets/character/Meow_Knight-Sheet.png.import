@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b63w5lu5go3ls"
-path="res://.godot/imported/Cats.png-cf9f2798a242a9cca578d7adb7d6eb17.ctex"
+uid="uid://exluqqvhjkvj"
+path="res://.godot/imported/Meow_Knight-Sheet.png-d12779cab49f9f6802ca522b9287e903.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/character/Cats.png"
-dest_files=["res://.godot/imported/Cats.png-cf9f2798a242a9cca578d7adb7d6eb17.ctex"]
+source_file="res://assets/character/Meow_Knight-Sheet.png"
+dest_files=["res://.godot/imported/Meow_Knight-Sheet.png-d12779cab49f9f6802ca522b9287e903.ctex"]
 
 [params]
 
