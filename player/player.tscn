@@ -47,7 +47,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [Vector2i(9, 3), Vector2i(8, 3), Vector2i(7, 3), Vector2i(6, 3), Vector2i(5, 3), Vector2i(4, 3), Vector2i(8, 3)]
+"values": [Vector2i(9, 3), Vector2i(8, 3), Vector2i(6, 3), Vector2i(5, 3), Vector2i(7, 3), Vector2i(8, 3), Vector2i(9, 3)]
 }
 
 [sub_resource type="Animation" id="Animation_7k15a"]
@@ -126,7 +126,7 @@ shape = SubResource("CapsuleShape2D_652gp")
 debug_color = Color(0, 0.6, 0.701961, 0.172549)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(2, -13)
+position = Vector2(1, -13)
 scale = Vector2(2, 2)
 texture = ExtResource("2_t0atl")
 hframes = 10

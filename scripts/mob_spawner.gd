@@ -7,6 +7,7 @@ extends Node2D
 var cooldown: float = 0.0
 
 func _process(delta):
+	if GameManager.is_game_over: return
 	# timer
 	cooldown -= delta
 	if cooldown > 0: return

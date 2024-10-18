@@ -133,13 +133,14 @@ func update_hitbox(delta: float):
 			var damage_amount = 1
 			damage(damage_amount)
 
+func triggerHpChanged() -> void:
+	hp_changed.emit(hp, max_hp)
+
 func damage(amount: int):
 	if hp <= 0: return
 	
 	hp -= amount
 	
-	hp_changed.emit(hp, max_hp)
-
 	# change sprite when damaged
 	modulate = Color.ORANGE_RED
 	var tween = create_tween()
@@ -147,19 +148,22 @@ func damage(amount: int):
 	tween.set_trans(Tween.TRANS_QUINT)
 	tween.tween_property(self, "modulate", Color.WHITE, 0.3)
 
+	triggerHpChanged()
 	# die
 	if hp <= 0:
 		die()
-
 
 func die():
 	GameManager.end_game()
 	print("Player is dead")
 	queue_free()
 
-func heal(amount: int):
+func heal(amount: int) -> int:
+	if hp <= 0: return 0
+	
 	hp += amount
 	if hp > max_hp:
 		hp = max_hp
-	print("Healed: ", amount, ", total life:  ", hp, "/", max_hp)
+	
+	triggerHpChanged()
 	return hp
