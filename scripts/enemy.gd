@@ -7,6 +7,9 @@ extends Node2D
 @export var drop_items: Array[PackedScene]
 @export var drop_chances: Array[float]
 
+func _ready():
+	GameManager.game_over.connect(queue_free)
+
 func damage(amount: int):
 	hp -= amount
 	print("Damage: ", amount, ", hp: ", hp)
