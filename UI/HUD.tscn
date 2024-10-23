@@ -1,10 +1,13 @@
-[gd_scene load_steps=7 format=3 uid="uid://ce7qn3bc41knx"]
+[gd_scene load_steps=11 format=3 uid="uid://ce7qn3bc41knx"]
 
 [ext_resource type="Texture2D" uid="uid://ceve7ppu6seq2" path="res://assets/UI/HealthBarPanel_160x41.png" id="1_w4edy"]
 [ext_resource type="Script" path="res://UI/HUD.gd" id="1_wm4qt"]
 [ext_resource type="Texture2D" uid="uid://vng0o6gb547m" path="res://assets/UI/ValueBar_128x16.png" id="2_frk5t"]
 [ext_resource type="Texture2D" uid="uid://bl1blqxjemvx7" path="res://assets/UI/ValueRed_120x8.png" id="3_te4m8"]
 [ext_resource type="Texture2D" uid="uid://qyn4wsf1sgy2" path="res://assets/UI/HeartIcons_32x32.png" id="4_1rlq2"]
+[ext_resource type="Texture2D" uid="uid://bieertqpdpxs0" path="res://assets/UI/CornerKnot_14x14.png" id="6_s2hts"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_piue3"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wn51q"]
 texture = ExtResource("1_w4edy")
@@ -13,41 +16,27 @@ texture_margin_top = 10.0
 texture_margin_right = 10.809
 texture_margin_bottom = 10.0
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_q847f"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3g3xl"]
+
 [node name="HUD" type="CanvasLayer" groups=["HUD"]]
 script = ExtResource("1_wm4qt")
+metadata/_edit_vertical_guides_ = [31.0]
 
-[node name="TimerLabel" type="Label" parent="."]
-unique_name_in_owner = true
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -93.0
-offset_top = 15.0
-offset_right = -22.0
-offset_bottom = 38.0
-grow_horizontal = 0
-text = "00:00"
-horizontal_alignment = 1
-vertical_alignment = 1
+[node name="LeftPanel" type="Panel" parent="."]
+offset_right = 208.0
+offset_bottom = 98.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_piue3")
 
-[node name="BakedLabel" type="Label" parent="."]
-unique_name_in_owner = true
-offset_left = 33.0
-offset_top = 61.0
-offset_right = 104.0
-offset_bottom = 84.0
-text = "10 points"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Panel" type="Panel" parent="."]
+[node name="HpPanel" type="Panel" parent="LeftPanel"]
 offset_left = 30.0
 offset_top = 20.0
 offset_right = 187.0
 offset_bottom = 52.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_wn51q")
 
-[node name="hpBar" type="TextureProgressBar" parent="Panel"]
+[node name="hpBar" type="TextureProgressBar" parent="LeftPanel/HpPanel"]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -62,7 +51,7 @@ texture_under = ExtResource("2_frk5t")
 texture_progress = ExtResource("3_te4m8")
 texture_progress_offset = Vector2(4, 4)
 
-[node name="TextureRect" type="TextureRect" parent="Panel"]
+[node name="HeartTexture" type="TextureRect" parent="LeftPanel/HpPanel"]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -73,3 +62,57 @@ offset_right = 33.0
 offset_bottom = 20.0
 grow_vertical = 2
 texture = ExtResource("4_1rlq2")
+
+[node name="PointsPanel" type="Panel" parent="LeftPanel"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 30.0
+offset_top = -40.0
+offset_right = 122.0
+offset_bottom = -13.0
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_q847f")
+
+[node name="BakedLabel" type="Label" parent="LeftPanel/PointsPanel"]
+unique_name_in_owner = true
+offset_left = 27.0
+offset_top = 1.0
+offset_right = 90.0
+offset_bottom = 24.0
+text = "10
+"
+vertical_alignment = 1
+
+[node name="CoinTexture" type="TextureRect" parent="LeftPanel/PointsPanel"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -9.0
+offset_right = 18.0
+offset_bottom = 9.0
+grow_vertical = 2
+texture = ExtResource("6_s2hts")
+
+[node name="RightPanel" type="Panel" parent="."]
+offset_left = 1053.0
+offset_right = 1152.0
+offset_bottom = 52.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_3g3xl")
+
+[node name="TimerLabel" type="Label" parent="RightPanel"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -88.0
+offset_top = 15.0
+offset_right = -17.0
+offset_bottom = 38.0
+grow_horizontal = 0
+text = "00:00"
+horizontal_alignment = 1
+vertical_alignment = 1
